@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "54c052bee808597be1de09160588e785",
+    "revision": "60c176fdb26d249721a95d57830776eb",
     "url": "/twitter-trends/index.html"
   },
   {
-    "revision": "a4d8bed9f3e27f2402be",
+    "revision": "fad165af4f626285ab2b",
     "url": "/twitter-trends/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "ea9cf3e2747c0de682e0",
-    "url": "/twitter-trends/static/js/2.e1d8f992.chunk.js"
+    "revision": "260515ed14e119b9dc58",
+    "url": "/twitter-trends/static/js/2.973929ef.chunk.js"
   },
   {
-    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/twitter-trends/static/js/2.e1d8f992.chunk.js.LICENSE.txt"
+    "revision": "c64c486544348f10a6d6c716950bc223",
+    "url": "/twitter-trends/static/js/2.973929ef.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a4d8bed9f3e27f2402be",
-    "url": "/twitter-trends/static/js/main.58b01577.chunk.js"
+    "revision": "fad165af4f626285ab2b",
+    "url": "/twitter-trends/static/js/main.f9459f6a.chunk.js"
   },
   {
     "revision": "ef6dcf3605a364f75ec3",
