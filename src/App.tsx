@@ -46,7 +46,6 @@ class App extends Component {
     
     for (let i = 0; i < trends.length; i++) {
       const trend = await this.fetchSearch(trends[i])
-      console.log('TREND: ' + trend)
       trends[i] = trend
     }
 
