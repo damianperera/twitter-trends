@@ -3,6 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const REACT_APP_MODE = process.env.REACT_APP_MODE
+
+  if (REACT_APP_MODE === 'Development') {
+    console.log('This is a development')
+  }
+
   return (
     <div className="App">
       <header className="App-header">
