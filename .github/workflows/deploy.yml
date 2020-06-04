@@ -17,6 +17,7 @@ jobs:
         yarn build
       env:
         REACT_APP_MODE: ${{ secrets.REACT_APP_MODE }}
+        REACT_APP_TWITTER_BEARER_TOKEN: ${{ secrets.REACT_APP_TWITTER_BEARER_TOKEN }}
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
