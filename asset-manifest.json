@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/twitter-trends/static/css/main.621cccc0.chunk.css",
-    "main.js": "/twitter-trends/static/js/main.d7de9f42.chunk.js",
-    "main.js.map": "/twitter-trends/static/js/main.d7de9f42.chunk.js.map",
+    "main.js": "/twitter-trends/static/js/main.0086c204.chunk.js",
+    "main.js.map": "/twitter-trends/static/js/main.0086c204.chunk.js.map",
     "runtime-main.js": "/twitter-trends/static/js/runtime-main.f0c7e573.js",
     "runtime-main.js.map": "/twitter-trends/static/js/runtime-main.f0c7e573.js.map",
     "static/js/2.fcbffbe1.chunk.js": "/twitter-trends/static/js/2.fcbffbe1.chunk.js",
     "static/js/2.fcbffbe1.chunk.js.map": "/twitter-trends/static/js/2.fcbffbe1.chunk.js.map",
     "index.html": "/twitter-trends/index.html",
-    "precache-manifest.c2e8ec90c02681f17cb883852fcdc007.js": "/twitter-trends/precache-manifest.c2e8ec90c02681f17cb883852fcdc007.js",
+    "precache-manifest.a587cdfb84c1f11d96b801a769df918d.js": "/twitter-trends/precache-manifest.a587cdfb84c1f11d96b801a769df918d.js",
     "service-worker.js": "/twitter-trends/service-worker.js",
     "static/css/main.621cccc0.chunk.css.map": "/twitter-trends/static/css/main.621cccc0.chunk.css.map",
     "static/js/2.fcbffbe1.chunk.js.LICENSE.txt": "/twitter-trends/static/js/2.fcbffbe1.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.f0c7e573.js",
     "static/js/2.fcbffbe1.chunk.js",
     "static/css/main.621cccc0.chunk.css",
-    "static/js/main.d7de9f42.chunk.js"
+    "static/js/main.0086c204.chunk.js"
   ]
 }
