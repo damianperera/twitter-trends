@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Build
+      run: |
+        yarn install
+        yarn build
+      env:
+        REACT_APP_APIKey: ${{ secrets.REACT_APP_APIKey }}
+        REACT_APP_APISecret: ${{ secrets.REACT_APP_APISecret }}
+    - name: Deploy
+      uses: damianperera/deploy-to-github-pages-action@1.1.1
+      with:
+        AUTHOR: damianperera
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
