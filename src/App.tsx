@@ -8,8 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       ip: '127.0.0.1',
-      trends: [],
-      places: []
+      trends: []
     };
   }
 
@@ -27,39 +26,31 @@ class App extends Component {
   }
 
   async fetchSearch(trend: any) {
-    fetch(`https://twittertrends.perera.io/twitter/search/tweets.json?q=${trend.query}`, {
+    const res = await fetch(`https://twittertrends.perera.io/twitter/search/tweets.json?q=${trend.query}&lang=en`, {
       headers: {
         Authorization: `Bearer ${this.TWITTER_BEARER_TOKEN}`
       }
     })
-    .then(res => res.json())
-    .then(res => {
-      trend.tweets = res
-      Promise.resolve(trend)
-    })
+    const data = await res.json()
+    trend.tweets = data.statuses
+    return Promise.resolve(trend)
   }
 
-  fetchTrendLocations() {
-    fetch('https://twittertrends.perera.io/twitter/trends/available.json', {
+  async fetchTrends() {
+    const res = await fetch('https://twittertrends.perera.io/twitter/trends/place.json?id=1', {
       headers: {
         Authorization: `Bearer ${this.TWITTER_BEARER_TOKEN}`
       }
     })
-    .then(res => res.json())
-    .then(res => this.setState({ places: res }))
-  }
+    const trends = (await res.json())[0].trends.slice(0,5)
+    
+    for (let i = 0; i < trends.length; i++) {
+      const trend = await this.fetchSearch(trends[i])
+      console.log('TREND: ' + trend)
+      trends[i] = trend
+    }
 
-  fetchTrends() {
-    fetch('https://twittertrends.perera.io/twitter/trends/place.json?id=1', {
-      headers: {
-        Authorization: `Bearer ${this.TWITTER_BEARER_TOKEN}`
-      }
-    })
-    .then(res => res.json())
-    .then(res => {
-      const trends = res[0].trends
-      this.setState({ trends })
-    })
+    this.setState({ trends })
   }
 
   componentDidMount() {
