@@ -16,8 +16,7 @@ jobs:
         yarn install
         yarn build
       env:
-        TEST_KEY: ${{ secrets.TEST_KEY }}
-        TEST_SECRET: ${{ secrets.TEST_SECRET }}
+        REACT_APP_MODE: ${{ secrets.REACT_APP_MODE }}
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
