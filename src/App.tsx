@@ -14,11 +14,7 @@ class App extends Component {
   }
 
   isDevelopmentBuild: boolean = process.env.REACT_APP_MODE === 'Development'
-  TWITTER_API_KEY = process.env.REACT_APP_TWITTER_API_KEY!
-  TWITTER_API_SECRET = process.env.REACT_APP_TWITTER_API_SECRET!
   TWITTER_BEARER_TOKEN = process.env.REACT_APP_TWITTER_BEARER_TOKEN!
-  TWITTER_ACCESS_TOKEN = process.env.REACT_APP_TWITTER_ACCESS_TOKEN!
-  TWITTER_ACCESS_TOKEN_SECRET = process.env.REACT_APP_TWITTER_ACCESS_TOKEN_SECRET!
 
   if (isDevelopmentBuild: boolean) {
     console.warn('This application is still under development')
@@ -74,7 +70,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         { this.isDevelopmentBuild && (
