@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@master
     - name: Build
       run: |
         yarn install
         yarn build
       env:
-        REACT_APP_APIKey: ${{ secrets.REACT_APP_APIKey }}
-        REACT_APP_APISecret: ${{ secrets.REACT_APP_APISecret }}
+        TEST_KEY: ${{ secrets.TEST_KEY }}
+        TEST_SECRET: ${{ secrets.TEST_SECRET }}
     - name: Deploy
       uses: damianperera/deploy-to-github-pages-action@1.1.1
       with:
