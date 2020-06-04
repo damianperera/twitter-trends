@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './twitter-logo.svg'
 import './App.css';
 
 function App() {
@@ -11,10 +12,17 @@ function App() {
 
   return (
     <div className="App">
+      { IS_DEVELOPMENT_BUILD && (
+        <header className="App-header">
+          <p>
+            <b>Coming Soon</b><br/>This app is under development
+          </p>
+        </header>
+      )}
       <header className="App-header">
-        <p>
-          <b>Coming Soon</b><br/>This app is under development
-        </p>
+        <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+          <img className="twitter-logo" alt="Twitter" src={logo}></img>Trends
+        </div>
       </header>
     </div>
   );
