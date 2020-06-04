@@ -1,3 +1,5 @@
+![CI](https://github.com/damianperera/twitter-trends/workflows/CI/badge.svg?event=push)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
