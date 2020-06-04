@@ -17,7 +17,7 @@ jobs:
         TEST_KEY: ${{ secrets.TEST_KEY }}
         TEST_SECRET: ${{ secrets.TEST_SECRET }}
     - name: Deploy
-      uses: damianperera/deploy-to-github-pages-action@1.1.1
+      uses: awb-pw/deploy-to-github-pages-action@1.1.1
       with:
         AUTHOR: damianperera
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
