@@ -7,7 +7,7 @@ function App() {
   const REACT_APP_MODE = process.env.REACT_APP_MODE
 
   if (REACT_APP_MODE === 'Development') {
-    console.log('This is a development')
+    console.warn('This application is still under development')
   }
 
   return (
