@@ -15,7 +15,7 @@ function App() {
       { IS_DEVELOPMENT_BUILD && (
         <header className="App-header">
           <p>
-            <b>Coming Soon</b><br/>This app is under development
+            Coming Soon<br/><br/><small>This app is under development</small>
           </p>
         </header>
       )}
