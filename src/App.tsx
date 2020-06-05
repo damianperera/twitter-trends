@@ -1,13 +1,24 @@
 import React, { Component } from 'react'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
+import { css } from "@emotion/core";
+import Loader from "react-spinners/BarLoader";
 import logo from './twitter-logo.svg'
 import './App.css'
 
-const LoadingSpinnerComponent = () => {
+const AppName = () => {
   const { promiseInProgress } = usePromiseTracker();
+  const override = css`
+  `;
   return (
     <div>
-      { (promiseInProgress) && <h3>Loading !!!</h3> }
+      Trends
+      <Loader
+        css={override}
+        height={3}
+        width={"9vh"}
+        color={"#ffffff"}
+        loading={promiseInProgress}
+      />
     </div>
   )
 }
@@ -84,9 +95,8 @@ class App extends Component {
         )}
         <header className="App-header">
           <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-            <img className="twitter-logo" alt="Twitter" src={logo}></img>Trends
+            <img className="twitter-logo" alt="Twitter" src={logo}></img><AppName />
           </div>
-          <LoadingSpinnerComponent/>
         </header>
       </div>
     )
