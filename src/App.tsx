@@ -86,7 +86,7 @@ const StateSwitcher = (props: any) => {
   const { trends } = props
   const { promiseInProgress } = usePromiseTracker()
   return (
-    <div style = {{ position: 'relative' }}>
+    <div style = {{ position: 'relative', display:'flex' }}>
       <CSSTransition
         in={promiseInProgress}
         timeout={500}
@@ -131,9 +131,9 @@ const AppBody = (props: any) => {
   const { trends } = props
   return (
     <div className="App-state">
-      <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+      <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex' }}>
         <ol>
-          {trends.map((trend: any) => <p key={trend.name}>{trend.name}</p>)}
+          {trends.map((trend: any) => <h4 key={trend.name}>{trend.name}</h4>)}
         </ol>
       </div>
     </div>
