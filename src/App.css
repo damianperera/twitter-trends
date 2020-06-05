@@ -51,17 +51,17 @@
   }
 }
 
-.my-node-enter {
+.stateSwitcherTransition-enter {
   opacity: 0;
 }
-.my-node-enter-active {
+.stateSwitcherTransition-enter-active {
   opacity: 1;
   transition: opacity .5s;
 }
-.my-node-exit {
+.stateSwitcherTransition-exit {
   opacity: 1;
 }
-.my-node-exit-active {
+.stateSwitcherTransition-exit-active {
   opacity: 0;
   transition: opacity .5s;
 }

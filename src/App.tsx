@@ -82,7 +82,7 @@ const StateSwitcher = (props: any) => {
       <CSSTransition
         in={promiseInProgress}
         timeout={500}
-        classNames="my-node"
+        classNames="stateSwitcherTransition"
         unmountOnExit
       >
         <AppLoader />
@@ -90,7 +90,7 @@ const StateSwitcher = (props: any) => {
       <CSSTransition
         in={!promiseInProgress}
         timeout={500}
-        classNames="my-node"
+        classNames="stateSwitcherTransition"
         unmountOnExit
       >
         <AppBody trends={trends}/>
