@@ -9,7 +9,7 @@ const AppName = () => {
   return (
     <div>
       Trends
-      <div style={{ height: '0.5vh' }}>
+      <div style={{ height: '0.1vh' }}>
         <Loader
           height={3}
           width={"99%"}
