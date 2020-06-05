@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
-import Loader from "react-spinners/BarLoader";
+import Loader from 'react-spinners/BarLoader';
 import logo from './twitter-logo.svg'
 import './App.css'
 
@@ -8,13 +8,13 @@ const AppName = () => {
   const { promiseInProgress } = usePromiseTracker();
   return (
     <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-      <img className="twitter-logo" alt="Twitter" src={logo}></img>
+      <img className='twitter-logo' alt='Twitter' src={logo}></img>
       <div> Trends
         <div style={{ height: '0.1vh' }}>
           <Loader
             height={2}
-            width={"99%"}
-            color={"#ffffff"}
+            width={'99%'}
+            color={'white'}
             loading={promiseInProgress}
           />
           {/* {!promiseInProgress && (
@@ -88,15 +88,15 @@ class App extends Component {
   render() {
     console.log(this.state)
     return (
-      <div className="App">
+      <div className='App'>
         { this.isDevelopmentBuild && (
-          <header className="App-header">
+          <header className='App-header'>
             <p>
               Coming Soon<br/><br/><small>This app is under development</small>
             </p>
           </header>
         )}
-        <header className="App-header">
+        <header className='App-header'>
           <AppName />
         </header>
       </div>
