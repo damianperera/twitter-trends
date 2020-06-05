@@ -1,24 +1,22 @@
 import React, { Component } from 'react'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
-import { css } from "@emotion/core";
 import Loader from "react-spinners/BarLoader";
 import logo from './twitter-logo.svg'
 import './App.css'
 
 const AppName = () => {
   const { promiseInProgress } = usePromiseTracker();
-  const override = css`
-  `;
   return (
     <div>
       Trends
-      <Loader
-        css={override}
-        height={3}
-        width={"9vh"}
-        color={"#ffffff"}
-        loading={promiseInProgress}
-      />
+      <div style={{ height: '0.5vh' }}>
+        <Loader
+          height={3}
+          width={"9vh"}
+          color={"#ffffff"}
+          loading={promiseInProgress}
+        />
+      </div>
     </div>
   )
 }
