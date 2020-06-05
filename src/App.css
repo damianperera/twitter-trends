@@ -65,3 +65,17 @@
   opacity: 0;
   transition: opacity .5s;
 }
+
+.App-trend {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.App-tweet {
+  margin-right: 1px;
+  margin-bottom: 1px;
+  box-sizing: border-box;
+  border: 2px solid #454545;
+}

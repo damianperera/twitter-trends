@@ -121,13 +121,33 @@ const AppLoader = () => {
 
 const AppBody = (props: any) => {
   const { trends } = props
+  console.log(trends)
   return (
     <div className="App-state">
       <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex' }}>
         <ol>
-          {trends.map((trend: any) => <h4 key={trend.name}>{trend.name}</h4>)}
+          {trends.map((trend: any) => <Trend {...trend}/>)}
         </ol>
       </div>
+    </div>
+  )
+}
+
+const Trend = (props: any) => {
+  const { name, promoted_content, query, tweet_volume, tweets, url } = props
+  return (
+    <div className='App-trend'>
+      <h4>{name}</h4>
+      {tweets.map((tweet: any) => <Tweet {...tweet}/>)}
+    </div>
+  )
+}
+
+const Tweet = (props: any) => {
+  const { created_at, entities, id, retweet_count, source, text, user, retweeted, retweeted_status } = props
+  return (
+    <div className='App-tweet'>
+      <p style={{ fontSize: '9px'}}>{text}</p>
     </div>
   )
 }
