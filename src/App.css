@@ -44,11 +44,29 @@
   }
 }
 
-.fade-appear {
+.loadComponent-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.loadComponent-enter.loadComponent-enter-active {
+  opacity: 1;
+}
+
+.loadComponent-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.loadComponent-leave.loadComponent-leave-active {
   opacity: 0.01;
 }
 
-.fade-appear.fade-appear-active {
-  opacity: 1;
+.loadComponent-appear {
+  opacity: 0.01;
   transition: opacity .5s ease-in;
+}
+
+.loadComponent-appear.loadComponent-appear-active {
+  opacity: 1;
 }

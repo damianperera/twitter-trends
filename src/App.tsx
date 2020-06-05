@@ -5,25 +5,32 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import logo from './twitter-logo.svg'
 import './App.css'
 
-const AppName = () => {
+const AppLoader = () => {
   const { promiseInProgress } = usePromiseTracker();
   return (
-    <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-      <img className='twitter-logo' alt='Twitter' src={logo}></img>
-      <div> Trends
-        <div style={{ height: '0.1vh' }}>
-          <Loader
-            height={2}
-            width={'99%'}
-            color={'white'}
-            loading={promiseInProgress}
-          />
-          {/* {!promiseInProgress && (
-            <hr style={{ height: '0.1vh', margin: 0, backgroundColor: 'white' }}/>
-          )} */}
-        </div>
-      </div>
-    </div>
+    <ReactCSSTransitionGroup
+      transitionName='loadComponent'
+      transitionAppear={true}
+    >
+      { promiseInProgress && 
+        <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+          <img className='twitter-logo' alt='Twitter' src={logo}></img>
+          <div> Trends
+            <div style={{ height: '0.1vh' }}>
+              <Loader
+                height={2}
+                width={'99%'}
+                color={'white'}
+                loading={promiseInProgress}
+              />
+              {/* {!promiseInProgress && (
+                <hr style={{ height: '0.1vh', margin: 0, backgroundColor: 'white' }}/>
+              )} */}
+            </div>
+          </div>
+        </div> 
+      }
+    </ReactCSSTransitionGroup>
   )
 }
 
@@ -97,17 +104,7 @@ class App extends Component {
           </header>
         )}
         <header className='App-header'>
-          <ReactCSSTransitionGroup
-            transitionAppear={true}
-            transitionName='fade'
-            transitionAppearTimeout={600}
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={300}
-            transitionEnter={false}
-            transitionLeave={false}
-          >
-            <AppName />
-          </ReactCSSTransitionGroup>
+            <AppLoader />
         </header>
       </div>
     )
