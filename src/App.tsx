@@ -1,38 +1,9 @@
 import React, { Component } from 'react'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
 import Loader from 'react-spinners/BarLoader';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import logo from './twitter-logo.svg'
 import './App.css'
-
-const AppLoader = () => {
-  const { promiseInProgress } = usePromiseTracker();
-  return (
-    <ReactCSSTransitionGroup
-      transitionName='loadComponent'
-      transitionAppear={true}
-    >
-      { promiseInProgress && 
-        <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-          <img className='twitter-logo' alt='Twitter' src={logo}></img>
-          <div> Trends
-            <div style={{ height: '0.1vh' }}>
-              <Loader
-                height={3}
-                width={'99%'}
-                color={'white'}
-                loading
-              />
-              {/* {!promiseInProgress && (
-                <hr style={{ height: '0.1vh', margin: 0, backgroundColor: 'white' }}/>
-              )} */}
-            </div>
-          </div>
-        </div> 
-      }
-    </ReactCSSTransitionGroup>
-  )
-}
 
 class App extends Component {
 
@@ -104,11 +75,69 @@ class App extends Component {
           </header>
         )}
         <header className='App-header'>
-            <AppLoader />
+          <StateSwitcher {...this.state}/>
         </header>
       </div>
     )
   }
+}
+
+const StateSwitcher = (props: any) => {
+  const { trends } = props
+  const { promiseInProgress } = usePromiseTracker()
+  return (
+    <div style = {{ position: 'relative' }}>
+      <CSSTransition
+        in={promiseInProgress}
+        timeout={500}
+        classNames="my-node"
+        unmountOnExit
+      >
+        <AppLoader />
+      </CSSTransition>
+      <CSSTransition
+        in={!promiseInProgress}
+        timeout={1000}
+        classNames="my-node-2"
+        unmountOnExit
+      >
+        <AppBody trends={trends}/>
+      </CSSTransition>
+    </div>
+  )
+}
+
+const AppLoader = () => {
+  return (
+    <div className="App-state">
+      <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+        <img className='twitter-logo' alt='Twitter' src={logo}></img>
+        <div> Trends
+          <div style={{ height: '0.1vh' }}>
+            <Loader
+              height={3}
+              width={'99%'}
+              color={'white'}
+              loading
+            />
+          </div>
+        </div>
+      </div> 
+    </div>
+  )
+}
+
+const AppBody = (props: any) => {
+  const { trends } = props
+  return (
+    <div className="App-state">
+      <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+        <ol>
+          {trends.map((trend: any) => <p key={trend.name}>{trend.name}</p>)}
+        </ol>
+      </div>
+    </div>
+  )
 }
 
 export default App;

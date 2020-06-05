@@ -31,6 +31,15 @@
   color: white;
 }
 
+.App-state {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -44,29 +53,32 @@
   }
 }
 
-.loadComponent-enter {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
+.my-node-enter {
+  opacity: 0;
 }
-
-.loadComponent-enter.loadComponent-enter-active {
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity .5s;
+}
+.my-node-exit {
   opacity: 1;
 }
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity .5s;
+}
 
-.loadComponent-leave {
+.my-node-2-enter {
+  opacity: 0;
+}
+.my-node-2-enter-active {
   opacity: 1;
-  transition: opacity .5s ease-in;
+  transition: opacity 1s;
 }
-
-.loadComponent-leave.loadComponent-leave-active {
-  opacity: 0.01;
-}
-
-.loadComponent-appear {
-  opacity: 0.01;
-  transition: opacity .5s ease-in;
-}
-
-.loadComponent-appear.loadComponent-appear-active {
+.my-node-2-exit {
   opacity: 1;
+}
+.my-node-2-exit-active {
+  opacity: 0;
+  transition: opacity 1s;
 }
