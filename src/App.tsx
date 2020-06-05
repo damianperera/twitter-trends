@@ -7,15 +7,20 @@ import './App.css'
 const AppName = () => {
   const { promiseInProgress } = usePromiseTracker();
   return (
-    <div>
-      Trends
-      <div style={{ height: '0.1vh' }}>
-        <Loader
-          height={3}
-          width={"99%"}
-          color={"#ffffff"}
-          loading={promiseInProgress}
-        />
+    <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+      <img className="twitter-logo" alt="Twitter" src={logo}></img>
+      <div> Trends
+        <div style={{ height: '0.1vh' }}>
+          <Loader
+            height={2}
+            width={"99%"}
+            color={"#ffffff"}
+            loading={promiseInProgress}
+          />
+          {/* {!promiseInProgress && (
+            <hr style={{ height: '0.1vh', margin: 0, backgroundColor: 'white' }}/>
+          )} */}
+        </div>
       </div>
     </div>
   )
@@ -92,9 +97,7 @@ class App extends Component {
           </header>
         )}
         <header className="App-header">
-          <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
-            <img className="twitter-logo" alt="Twitter" src={logo}></img><AppName />
-          </div>
+          <AppName />
         </header>
       </div>
     )
