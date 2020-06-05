@@ -93,7 +93,7 @@ const StateSwitcher = (props: any) => {
         classNames="stateSwitcherTransition"
         unmountOnExit
       >
-        <AppBody trends={trends}/>
+        <AppBody trends={trends.filter((trend: any) => trend.tweets.length > 0)}/>
       </CSSTransition>
     </div>
   )
@@ -125,9 +125,7 @@ const AppBody = (props: any) => {
   return (
     <div className="App-state">
       <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex' }}>
-        <ol>
-          {trends.map((trend: any) => <Trend {...trend}/>)}
-        </ol>
+          {trends.map((trend: any) => <Trend id={trend.query} {...trend}/>)}
       </div>
     </div>
   )
@@ -137,8 +135,8 @@ const Trend = (props: any) => {
   const { name, promoted_content, query, tweet_volume, tweets, url } = props
   return (
     <div className='App-trend'>
-      <h4>{name}</h4>
-      {tweets.map((tweet: any) => <Tweet {...tweet}/>)}
+      <h4>{name}<small>{tweet_volume}</small></h4>
+      {tweets.map((tweet: any) => <Tweet id={tweet.id} {...tweet}/>)}
     </div>
   )
 }
@@ -147,7 +145,7 @@ const Tweet = (props: any) => {
   const { created_at, entities, id, retweet_count, source, text, user, retweeted, retweeted_status } = props
   return (
     <div className='App-tweet'>
-      <p style={{ fontSize: '9px'}}>{text}</p>
+      <p id={id} style={{ fontSize: '9px'}}>{text}</p>
     </div>
   )
 }
