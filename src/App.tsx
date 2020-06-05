@@ -10,7 +10,6 @@ class App extends Component {
   constructor(props: any) {
     super(props);
     this.state = {
-      ip: '127.0.0.1',
       trends: []
     };
   }
@@ -20,12 +19,6 @@ class App extends Component {
   
   if (isDevelopmentBuild: boolean) {
     console.warn('This application is still under development')
-  }
-
-  fetchIP() {
-    fetch(`https://api.ipify.org?format=json`)
-      .then(res => res.json())
-      .then(({ ip }) => this.setState({ ip }));
   }
 
   async fetchSearch(trend: any) {
@@ -59,7 +52,6 @@ class App extends Component {
 
   componentDidMount() {
     if (!this.isDevelopmentBuild) {
-      this.fetchIP()
       trackPromise(this.fetchTrends())
     }
   }
