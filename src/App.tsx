@@ -12,7 +12,7 @@ const AppName = () => {
       <div style={{ height: '0.5vh' }}>
         <Loader
           height={3}
-          width={"9vh"}
+          width={"99%"}
           color={"#ffffff"}
           loading={promiseInProgress}
         />
