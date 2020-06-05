@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
+import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
 import logo from './twitter-logo.svg'
 import './App.css'
+
+const LoadingSpinnerComponent = () => {
+  const { promiseInProgress } = usePromiseTracker();
+  return (
+    <div>
+      { (promiseInProgress) && <h3>Loading !!!</h3> }
+    </div>
+  )
+}
 
 class App extends Component {
 
@@ -14,7 +24,7 @@ class App extends Component {
 
   isDevelopmentBuild: boolean = process.env.REACT_APP_MODE === 'Development'
   TWITTER_BEARER_TOKEN = process.env.REACT_APP_TWITTER_BEARER_TOKEN!
-
+  
   if (isDevelopmentBuild: boolean) {
     console.warn('This application is still under development')
   }
@@ -50,16 +60,19 @@ class App extends Component {
     }
 
     this.setState({ trends })
+
+    return Promise.resolve()
   }
 
   componentDidMount() {
     if (!this.isDevelopmentBuild) {
       this.fetchIP()
-      this.fetchTrends()
+      trackPromise(this.fetchTrends())
     }
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         { this.isDevelopmentBuild && (
@@ -73,6 +86,7 @@ class App extends Component {
           <div style={{ flexDirection: 'row', justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
             <img className="twitter-logo" alt="Twitter" src={logo}></img>Trends
           </div>
+          <LoadingSpinnerComponent/>
         </header>
       </div>
     )
