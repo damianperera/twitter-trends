@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
 import Loader from 'react-spinners/BarLoader';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import logo from './twitter-logo.svg'
 import './App.css'
 
@@ -96,7 +97,17 @@ class App extends Component {
           </header>
         )}
         <header className='App-header'>
-          <AppName />
+          <ReactCSSTransitionGroup
+            transitionAppear={true}
+            transitionName='fade'
+            transitionAppearTimeout={600}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}
+            transitionEnter={false}
+            transitionLeave={false}
+          >
+            <AppName />
+          </ReactCSSTransitionGroup>
         </header>
       </div>
     )
