@@ -18,10 +18,10 @@ const AppLoader = () => {
           <div> Trends
             <div style={{ height: '0.1vh' }}>
               <Loader
-                height={2}
+                height={3}
                 width={'99%'}
                 color={'white'}
-                loading={promiseInProgress}
+                loading
               />
               {/* {!promiseInProgress && (
                 <hr style={{ height: '0.1vh', margin: 0, backgroundColor: 'white' }}/>
