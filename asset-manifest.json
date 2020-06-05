@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/twitter-trends/static/css/main.621cccc0.chunk.css",
-    "main.js": "/twitter-trends/static/js/main.2d363d08.chunk.js",
-    "main.js.map": "/twitter-trends/static/js/main.2d363d08.chunk.js.map",
+    "main.css": "/twitter-trends/static/css/main.22e10af9.chunk.css",
+    "main.js": "/twitter-trends/static/js/main.69630ed8.chunk.js",
+    "main.js.map": "/twitter-trends/static/js/main.69630ed8.chunk.js.map",
     "runtime-main.js": "/twitter-trends/static/js/runtime-main.f0c7e573.js",
     "runtime-main.js.map": "/twitter-trends/static/js/runtime-main.f0c7e573.js.map",
-    "static/js/2.50c93fa2.chunk.js": "/twitter-trends/static/js/2.50c93fa2.chunk.js",
-    "static/js/2.50c93fa2.chunk.js.map": "/twitter-trends/static/js/2.50c93fa2.chunk.js.map",
+    "static/js/2.b65af047.chunk.js": "/twitter-trends/static/js/2.b65af047.chunk.js",
+    "static/js/2.b65af047.chunk.js.map": "/twitter-trends/static/js/2.b65af047.chunk.js.map",
     "index.html": "/twitter-trends/index.html",
-    "precache-manifest.76a93a58effb3db5b4c5b829d75eeacf.js": "/twitter-trends/precache-manifest.76a93a58effb3db5b4c5b829d75eeacf.js",
+    "precache-manifest.14a1ccdaab6bbe8877b73536cd52493b.js": "/twitter-trends/precache-manifest.14a1ccdaab6bbe8877b73536cd52493b.js",
     "service-worker.js": "/twitter-trends/service-worker.js",
-    "static/css/main.621cccc0.chunk.css.map": "/twitter-trends/static/css/main.621cccc0.chunk.css.map",
-    "static/js/2.50c93fa2.chunk.js.LICENSE.txt": "/twitter-trends/static/js/2.50c93fa2.chunk.js.LICENSE.txt",
+    "static/css/main.22e10af9.chunk.css.map": "/twitter-trends/static/css/main.22e10af9.chunk.css.map",
+    "static/js/2.b65af047.chunk.js.LICENSE.txt": "/twitter-trends/static/js/2.b65af047.chunk.js.LICENSE.txt",
     "static/media/twitter-logo.svg": "/twitter-trends/static/media/twitter-logo.084e6118.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f0c7e573.js",
-    "static/js/2.50c93fa2.chunk.js",
-    "static/css/main.621cccc0.chunk.css",
-    "static/js/main.2d363d08.chunk.js"
+    "static/js/2.b65af047.chunk.js",
+    "static/css/main.22e10af9.chunk.css",
+    "static/js/main.69630ed8.chunk.js"
   ]
 }
