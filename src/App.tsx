@@ -132,7 +132,7 @@ const AppBody = (props: any) => {
 }
 
 const Trend = (props: any) => {
-  const { name, promoted_content, query, tweet_volume, tweets, url } = props
+  const { name, tweet_volume, tweets } = props
   return (
     <div className='App-trend'>
       <h4>{name}<small>{tweet_volume}</small></h4>
@@ -142,7 +142,7 @@ const Trend = (props: any) => {
 }
 
 const Tweet = (props: any) => {
-  const { created_at, entities, id, retweet_count, source, text, user, retweeted, retweeted_status } = props
+  const { id, text } = props
   return (
     <div className='App-tweet'>
       <p id={id} style={{ fontSize: '9px'}}>{text}</p>
